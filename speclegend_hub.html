@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpecLegend - دليلك العربي والعالمي الأسطوري لمعرفة متطلبات تشغيل ألعاب الفيديو للكمبيوتر الشخصي ومعلومات سريعة ومفصلة عنها.">
+    <meta name="keywords" content="متطلبات تشغيل الالعاب, ريزيدنت ايفل, كول اوف ديوتي, ماين كرافت, مواصفات كمبيوتر الالعاب, PC specs, Game specs, SpecLegend">
+    <title>SpecLegend - أسطورة مواصفات الألعاب</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Changa (Arabic Gaming) & Orbitron (Cyberpunk/Tech English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400;500;600;700;800&family=Orbitron:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Gaming Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Changa', 'sans-serif'],
+                        mono: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        gaming: {
+                            dark: '#03050a',
+                            card: '#080c16',
+                            cardHover: '#11182c',
+                            accent: '#ef4444', 
+                            codAccent: '#f97316', 
+                            mcAccent: '#10b981', 
+                            cleanAccent: '#0ea5e9', 
+                            textGray: '#9ca3af'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #03050a;
+            color: #f3f4f6;
+        }
+        
+        /* مخصص لشريط التمرير (Scrollbar) لتصميم يليق بـ Gaming Theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #03050a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #11182c;
+            border-radius: 9999px;
+            border: 2px solid #03050a;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
+        }
+
+        /* تأثير التوهج اللطيف للخلفية */
+        .glowing-bg {
+            filter: blur(140px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        /* تأثير الانتقال السلس للنافذة المنبثقة */
+        .modal-transition {
+            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* تخصيص مظهر أداة الترجمة من جوجل لتتلاءم تماماً مع الطابع المظلم */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+        body {
+            top: 0px !important;
+        }
+        #google_translate_element {
+            display: inline-block;
+        }
+        .goog-te-gadget {
+            font-family: 'Changa', sans-serif !important;
+            color: #9ca3af !important;
+        }
+        .goog-te-gadget-simple {
+            background-color: #080c16 !important;
+            border: 1px solid #11182c !important;
+            padding: 4px 8px !important;
+            border-radius: 12px !important;
+            cursor: pointer !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+        .goog-te-gadget-simple img {
+            display: none !important;
+        }
+        .goog-te-menu-value {
+            color: #f3f4f6 !important;
+            font-size: 13px !important;
+            font-weight: 700 !important;
+        }
+        .goog-te-menu-value span {
+            color: #f3f4f6 !important;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+    <nav class="sticky top-0 z-40 bg-gaming-dark/90 backdrop-blur-md border-b border-gray-900 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo containing requested image_bb0df9.png -->
+                <div class="flex items-center gap-3">
+                    <img src="image_bb0df9.png" class="h-14 w-14 object-contain rounded-2xl shadow-lg shadow-sky-500/20 hover:scale-105 transition duration-300" alt="SpecLegend Logo">
+                    <div>
+                        <span class="text-2xl font-black tracking-wider text-white font-mono">SPEC<span class="text-gaming-cleanAccent">LEGEND</span></span>
+                        <span data-localize="nav-subtitle" class="block text-xs text-gaming-textGray font-semibold leading-3 mt-1">بوابتك الأسطورية لمتطلبات تشغيل الألعاب</span>
+                    </div>
+                </div>
+
+                <!-- Languages & Tools -->
+                <div class="flex items-center gap-3">
+                    <!-- Native Language Switcher -->
+                    <div class="relative">
+                        <select id="lang-switch" onchange="changeLanguage(this.value)" class="bg-gaming-card border border-gray-800 text-white text-xs font-bold py-2 px-3 rounded-xl focus:outline-none focus:border-gaming-cleanAccent cursor-pointer">
+                            <option value="ar" selected>العربية (Arabic)</option>
+                            <option value="en">English (English)</option>
+                            <option value="fr">Français (French)</option>
+                            <option value="es">Español (Spanish)</option>
+                        </select>
+                    </div>
+
+                    <!-- Instant World Translation -->
+                    <div id="google_translate_element" class="hidden sm:inline-block"></div>
+
+                    <!-- Live Updates Badge -->
+                    <div class="hidden md:flex items-center gap-3">
+                        <span class="bg-sky-500/10 border border-sky-500/30 text-gaming-cleanAccent text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-2">
+                            <span class="h-2.5 w-2.5 rounded-full bg-gaming-cleanAccent inline-block animate-ping"></span>
+                            <span data-localize="badge-active">النسخة الأسطورية نشطة الآن</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative overflow-hidden border-b border-gray-900 py-20 px-4">
+        <!-- Ambient Background Glows -->
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-gaming-cleanAccent glowing-bg rounded-full"></div>
+        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-gaming-mcAccent glowing-bg rounded-full"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-gaming-textGray text-sm font-bold px-4 py-1.5 rounded-full mb-6">
+                <i class="fa-solid fa-shield-halved text-emerald-500"></i> <span data-localize="hero-top-badge">قاعدة بيانات متكاملة وموثوقة بنسبة 100% حلال شرعاً</span>
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                <span data-localize="hero-title-1">اعرف متطلبات تشغيل</span> <span class="text-transparent bg-clip-text bg-gradient-to-l from-gaming-cleanAccent via-gaming-mcAccent to-gaming-codAccent" data-localize="hero-title-colored">ألعابك المفضلة</span> <span data-localize="hero-title-2">في ثوانٍ!</span>
+            </h1>
+            <p data-localize="hero-description" class="text-lg md:text-xl text-gaming-textGray mb-10 max-w-2xl mx-auto leading-relaxed">
+                تصفح المواصفات الرسمية ومعلومات سريعة ومفيدة عن أشهر ألعاب الكمبيوتر النظيفة والتعليمية والممتعة والآمنة الخالية من العنف والشبهات، إلى جانب السلاسل العالمية الشهيرة.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto bg-gaming-card p-2 rounded-2xl border border-gray-800 shadow-2xl focus-within:border-gaming-cleanAccent/50 transition-all duration-300 mb-10">
+                <div class="flex flex-col sm:flex-row items-center gap-2">
+                    <div class="relative w-full flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-gaming-textGray text-lg"></i>
+                        <input 
+                            type="text" 
+                            id="search-input" 
+                            placeholder="ابحث باسم اللعبة بالإنجليزية أو العربية... (مثال: Forza)" 
+                            class="w-full bg-transparent text-white pr-12 pl-4 py-3 rounded-xl focus:outline-none placeholder-gray-500 text-base font-medium"
+                        >
+                    </div>
+                    <button 
+                        onclick="scrollToGames()"
+                        class="w-full sm:w-auto bg-gaming-cleanAccent hover:bg-sky-600 text-black font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-gaming-cleanAccent/20 transition-all duration-200 flex items-center justify-center gap-2 font-sans"
+                    >
+                        <span data-localize="search-btn">تصفح الكل</span>
+                        <i class="fa-solid fa-chevron-down text-sm"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Quick Series Filter Badges -->
+            <div class="flex flex-wrap justify-center items-center gap-3 text-sm">
+                <span data-localize="filter-title" class="text-gaming-textGray font-semibold ml-2">تصفية حسب السلسلة:</span>
+                <button onclick="filterBySeries('all')" id="btn-filter-all" class="px-4 py-2.5 rounded-xl bg-white/10 text-white hover:bg-white/20 transition duration-200 font-bold border border-transparent flex items-center gap-2">
+                    <i class="fa-solid fa-border-all"></i> <span data-localize="filter-all">الكل</span>
+                </button>
+                <button onclick="filterBySeries('clean-games')" id="btn-filter-clean" class="px-4 py-2.5 rounded-xl bg-gaming-card hover:bg-sky-950/20 text-gray-300 hover:text-white transition duration-200 font-bold border border-gray-800 flex items-center gap-2">
+                    <i class="fa-solid fa-seedling text-gaming-cleanAccent animate-bounce"></i> <span data-localize="filter-clean">ألعاب عائلية ومحاكاة (حلال)</span>
+                </button>
+                <button onclick="filterBySeries('resident-evil')" id="btn-filter-re" class="px-4 py-2.5 rounded-xl bg-gaming-card hover:bg-red-950/20 text-gray-300 hover:text-white transition duration-200 font-bold border border-gray-800 flex items-center gap-2">
+                    <i class="fa-solid fa-skull text-gaming-accent"></i> <span data-localize="filter-re">ريزيدنت إيفل</span>
+                </button>
+                <button onclick="filterBySeries('call-of-duty')" id="btn-filter-cod" class="px-4 py-2.5 rounded-xl bg-gaming-card hover:bg-orange-950/20 text-gray-300 hover:text-white transition duration-200 font-bold border border-gray-800 flex items-center gap-2">
+                    <i class="fa-solid fa-crosshairs text-gaming-codAccent"></i> <span data-localize="filter-cod">كول أوف ديوتي</span>
+                </button>
+                <button onclick="filterBySeries('minecraft')" id="btn-filter-mc" class="px-4 py-2.5 rounded-xl bg-gaming-card hover:bg-green-950/20 text-gray-300 hover:text-white transition duration-200 font-bold border border-gray-800 flex items-center gap-2">
+                    <i class="fa-solid fa-cube text-gaming-mcAccent"></i> <span data-localize="filter-mc">ماين كرافت</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1 w-full animate-fadeIn">
+        <section id="games-list" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-3">
+                        <i class="fa-solid fa-gamepad text-gaming-cleanAccent"></i>
+                        <span data-localize="section-title">قائمة ألعاب السلاسل الكبرى والخيارات العائلية</span>
+                    </h2>
+                    <p data-localize="section-subtitle" class="text-gaming-textGray mt-1">تصفح متطلبات التشغيل والمواصفات الكاملة للكمبيوتر لكل لعبة.</p>
+                </div>
+                
+                <!-- Dynamic active filter summary -->
+                <div id="active-filter-badge" class="hidden">
+                    <span class="bg-gaming-card border border-gray-800 text-white px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2">
+                        <span data-localize="active-filter-label">السلسلة النشطة:</span>
+                        <span id="filter-name" class="text-gaming-cleanAccent font-mono">الكل</span>
+                        <button onclick="filterBySeries('all')" class="text-gray-400 hover:text-white mr-1.5" title="إلغاء التصفية"><i class="fa-solid fa-xmark"></i></button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Empty Search Results Visual -->
+            <div id="no-results" class="hidden text-center py-20 bg-gaming-card rounded-3xl border border-gray-800">
+                <i class="fa-solid fa-ghost text-5xl text-gaming-cleanAccent mb-4 animate-bounce"></i>
+                <h3 data-localize="no-results-title" class="text-xl font-bold text-white mb-2">لم نجد أي لعبة تطابق بحثك!</h3>
+                <p data-localize="no-results-subtitle" class="text-gaming-textGray max-w-md mx-auto px-4">يرجى مراجعة الاسم أو تجربة كتابة السلسلة مثل "Forza" أو "Minecraft" أو "Flight".</p>
+            </div>
+
+            <!-- Games Grid -->
+            <div id="games-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- JavaScript will inject cards here -->
+            </div>
+        </section>
+    </main>
+
+    <div id="game-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-gaming-card border border-gray-800 w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl transition-all transform scale-95 duration-300 flex flex-col max-h-[90vh]">
+            
+            <!-- Modal Header / Dynamic Theme Style -->
+            <div id="modal-header-bg" class="relative h-48 md:h-60 flex items-end p-6 bg-gradient-to-t transition-colors duration-350">
+                <!-- Pattern overlay for tech aesthetic -->
+                <div class="absolute inset-0 bg-black/30 z-0">
+                    <svg class="w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+                </div>
+                <!-- Close Button inside header -->
+                <div class="absolute top-4 right-4 z-20">
+                    <button onclick="closeModal()" class="bg-black/60 hover:bg-gaming-cleanAccent hover:text-black text-white h-10 w-10 rounded-full flex items-center justify-center transition-all duration-200" title="إغلاق">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+                
+                <!-- Game Main Info Badge in header -->
+                <div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between w-full gap-4">
+                    <div>
+                        <span id="modal-genre" class="bg-gaming-cleanAccent text-black text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider mb-2 inline-block">محاكاة وذكاء</span>
+                        <h2 id="modal-title" class="text-2xl md:text-4xl font-black text-white drop-shadow-lg leading-tight">اسم اللعبة</h2>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-black/60 px-4 py-2 rounded-xl border border-gray-800/80">
+                            <span data-localize="modal-global-rating" class="text-xs text-gaming-textGray block mb-0.5">التقييم العالمي</span>
+                            <span id="modal-rating" class="text-yellow-400 font-extrabold text-sm flex items-center gap-1"><i class="fa-solid fa-star"></i> 9.5/10</span>
+                        </div>
+                        <div class="bg-black/60 px-4 py-2 rounded-xl border border-gray-800/80">
+                            <span data-localize="modal-release-year" class="text-xs text-gaming-textGray block mb-0.5">سنة الإصدار</span>
+                            <span id="modal-year" class="text-white font-extrabold text-sm font-mono">2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Tabs (Specifications vs Quick Info) -->
+            <div class="flex border-b border-gray-800 bg-gaming-dark/60 p-1">
+                <button onclick="switchTab('specs')" id="tab-btn-specs" class="flex-1 py-4 text-center font-bold text-sm border-b-2 border-gaming-cleanAccent text-white transition-all duration-150">
+                    <i class="fa-solid fa-microchip ml-1.5"></i> <span data-localize="tab-specs">متطلبات تشغيل الكمبيوتر</span>
+                </button>
+                <button onclick="switchTab('quick-info')" id="tab-btn-quick-info" class="flex-1 py-4 text-center font-bold text-sm text-gaming-textGray hover:text-white transition-all duration-150 border-b-2 border-transparent">
+                    <i class="fa-solid fa-circle-info ml-1.5"></i> <span data-localize="tab-quick">معلومات على السريع</span>
+                </button>
+            </div>
+
+            <!-- Modal Body Content -->
+            <div class="p-6 md:p-8 overflow-y-auto flex-1 text-sm md:text-base">
+                
+                <!-- Tab 1: System Specs Content -->
+                <div id="tab-content-specs" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Minimum requirements -->
+                        <div class="bg-gaming-dark/60 p-5 rounded-2xl border border-gray-800/80 relative">
+                            <span data-localize="specs-min-badge" class="absolute -top-3 right-4 bg-gray-800 text-gaming-textGray text-xs font-extrabold px-3 py-1 rounded-full border border-gray-700">المستوى الأدنى</span>
+                            <h3 class="text-base font-bold text-white mb-4 border-b border-gray-800/50 pb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-circle-down text-orange-400"></i> <span data-localize="specs-min-title">الحد الأدنى لتشغيل اللعبة</span>
+                            </h3>
+                            <ul class="space-y-3 font-mono text-xs">
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-window-maximize text-xs"></i> <span data-localize="spec-os">نظام التشغيل:</span></span>
+                                    <span id="min-os" class="text-white font-semibold">Windows 10 (64-bit)</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-microchip text-xs"></i> <span data-localize="spec-cpu">المعالج:</span></span>
+                                    <span id="min-cpu" class="text-white font-semibold text-right">Intel / AMD</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-memory text-xs"></i> <span data-localize="spec-ram">الذاكرة (RAM):</span></span>
+                                    <span id="min-ram" class="text-white font-semibold">8 GB RAM</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-vr-cardboard text-xs"></i> <span data-localize="spec-gpu">كرت الشاشة:</span></span>
+                                    <span id="min-gpu" class="text-white font-semibold text-right">NVIDIA / AMD</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-circle-nodes text-xs"></i> <span data-localize="spec-dx">إصدار DirectX:</span></span>
+                                    <span id="min-dx" class="text-white font-semibold">Version 12</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-hard-drive text-xs"></i> <span data-localize="spec-storage">مساحة التخزين:</span></span>
+                                    <span id="min-storage" class="text-white font-semibold">110 GB free space</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Recommended requirements -->
+                        <div class="bg-gaming-cleanAccent/5 p-5 rounded-2xl border border-gaming-cleanAccent/20 relative" id="rec-specs-container">
+                            <span id="rec-badge" class="absolute -top-3 right-4 bg-gaming-cleanAccent text-black text-xs font-extrabold px-3 py-1 rounded-full">الحد الموصى به</span>
+                            <h3 class="text-base font-bold text-white mb-4 border-b border-gaming-cleanAccent/10 pb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-gaming-cleanAccent" id="rec-icon"></i> <span data-localize="specs-rec-title">الحد الموصى به (أفضل أداء)</span>
+                            </h3>
+                            <ul class="space-y-3 font-mono text-xs">
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-window-maximize text-xs"></i> <span data-localize="spec-os">نظام التشغيل:</span></span>
+                                    <span id="rec-os" class="text-white font-semibold">Windows 10/11 (64-bit)</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-microchip text-xs"></i> <span data-localize="spec-cpu">المعالج:</span></span>
+                                    <span id="rec-cpu" class="text-white font-semibold text-right">Intel / AMD</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-memory text-xs"></i> <span data-localize="spec-ram">الذاكرة (RAM):</span></span>
+                                    <span id="rec-ram" class="text-white font-semibold">16 GB RAM</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-vr-cardboard text-xs"></i> <span data-localize="spec-gpu">كرت الشاشة:</span></span>
+                                    <span id="rec-gpu" class="text-white font-semibold text-right">NVIDIA / AMD</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 border-b border-gray-800/20 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-circle-nodes text-xs"></i> <span data-localize="spec-dx">إصدار DirectX:</span></span>
+                                    <span id="rec-dx" class="text-white font-semibold">Version 12</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:justify-between py-1.5 gap-1">
+                                    <span class="text-gaming-textGray flex items-center gap-1.5 font-sans"><i class="fa-solid fa-hard-drive text-xs"></i> <span data-localize="spec-storage">مساحة التخزين:</span></span>
+                                    <span id="rec-storage" class="text-white font-semibold">110 GB (SSD)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 border border-white/5 p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-exclamation text-amber-500 text-lg flex-shrink-0"></i>
+                            <p class="text-xs text-gaming-textGray">
+                                <strong data-localize="tip-title">نصيحة تقنية:</strong> <span data-localize="tip-desc">للحصول على تجربة لعب بدون تأخر، ننصح بشدة بتثبيت الألعاب الحديثة على قرص صلب من نوع SSD لضمان أقصى سرعة ممكنة.</span>
+                            </p>
+                        </div>
+                        <button onclick="copySpecsToClipboard()" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white border border-white/10 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-150">
+                            <i class="fa-regular fa-copy"></i>
+                            <span data-localize="btn-copy">نسخ ومشاركة المواصفات</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Quick Info Content -->
+                <div id="tab-content-quick-info" class="space-y-6 hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Left Stats side card -->
+                        <div class="space-y-4 md:col-span-1">
+                            <div class="bg-gaming-dark/60 p-4 rounded-xl border border-gray-800/80">
+                                <span data-localize="info-label-dev" class="text-xs text-gaming-textGray block mb-1">المطور والمبرمج</span>
+                                <span id="info-developer" class="text-white font-extrabold text-sm block">Capcom</span>
+                            </div>
+                            <div class="bg-gaming-dark/60 p-4 rounded-xl border border-gray-800/80">
+                                <span data-localize="info-label-pub" class="text-xs text-gaming-textGray block mb-1">الشركة الناشرة</span>
+                                <span id="info-publisher" class="text-white font-extrabold text-sm block">Capcom</span>
+                            </div>
+                            <div class="bg-gaming-dark/60 p-4 rounded-xl border border-gray-800/80">
+                                <span data-localize="info-label-plat" class="text-xs text-gaming-textGray block mb-1">المنصات المدعومة</span>
+                                <span id="info-platforms" class="text-white font-extrabold text-xs leading-relaxed block font-mono">PC, PS5, Xbox Series X/S</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Story Description -->
+                        <div class="bg-gaming-dark/60 p-6 rounded-2xl border border-gray-800 md:col-span-2 flex flex-col justify-between gap-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-clapperboard text-gaming-cleanAccent" id="info-desc-icon"></i> <span data-localize="info-desc-title">نبذة عن القصة وأسلوب اللعب</span>
+                                </h3>
+                                <p id="info-description" class="text-gaming-textGray leading-relaxed text-sm">
+                                    وصف اللعبة ومغامراتها وأطوارها الفردية والجماعية.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-800/60 flex justify-between items-center text-xs">
+                                <span data-localize="info-label-engine" class="text-gaming-textGray font-semibold">محرك التطوير المستعمل:</span>
+                                <span id="info-engine" class="bg-gaming-cleanAccent/10 border border-gaming-cleanAccent/20 text-gaming-cleanAccent text-xs font-black px-3 py-1 rounded font-mono">RE Engine</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-gaming-dark/80 p-5 border-t border-gray-800/60 flex flex-col sm:flex-row gap-3 items-center justify-between">
+                <span data-localize="modal-footer-copyright" class="text-xs text-gaming-textGray">حقوق الألعاب والأسماء محفوظة لمطوريها الرسميين.</span>
+                <button onclick="closeModal()" id="modal-close-btn" class="w-full sm:w-auto bg-gaming-cleanAccent hover:bg-sky-400 text-black px-6 py-2.5 rounded-xl font-bold text-sm transition-colors duration-200">
+                    موافق، إغلاق النافذة
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom In-App Toast System -->
+    <div id="toast-container" class="fixed bottom-6 right-6 left-6 sm:left-auto z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <footer class="bg-gaming-dark border-t border-gray-900 pt-16 pb-8 w-full relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 text-center md:text-right">
+                <!-- Branding column -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-right">
+                    <div class="flex items-center gap-2 mb-3">
+                        <img src="image_bb0df9.png" class="h-10 w-10 object-contain rounded-xl shadow-md" alt="SpecLegend Footer logo">
+                        <span class="text-2xl font-black text-white font-mono">SPEC<span class="text-gaming-cleanAccent">LEGEND</span></span>
+                    </div>
+                    <p data-localize="footer-brand-desc" class="text-sm text-gaming-textGray leading-relaxed">
+                        دليل عربي وعالمي أسطوري، حديث ومتكامل للتعرف على متطلبات تشغيل ألعاب الفيديو للكمبيوتر الشخصي بمختلف أنواعها النظيفة والآمنة تماماً.
+                    </p>
+                </div>
+                <!-- Links column -->
+                <div>
+                    <h4 class="text-white font-extrabold text-base mb-4 flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-solid fa-gamepad text-gaming-cleanAccent text-sm"></i> <span data-localize="footer-col-2">السلاسل المدعومة حالياً</span>
+                    </h4>
+                    <ul class="space-y-3 text-sm text-gaming-textGray font-semibold">
+                        <li><a href="javascript:void(0)" onclick="filterBySeries('clean-games'); scrollToGames();" class="hover:text-gaming-cleanAccent transition-colors"><i class="fa-solid fa-seedling ml-1 text-xs text-gaming-cleanAccent"></i> <span data-localize="filter-clean">ألعاب عائلية ومحاكاة (حلال)</span></a></li>
+                        <li><a href="javascript:void(0)" onclick="filterBySeries('resident-evil'); scrollToGames();" class="hover:text-gaming-accent transition-colors"><i class="fa-solid fa-ghost ml-1 text-xs"></i> <span data-localize="filter-re">رعب Resident Evil</span></a></li>
+                        <li><a href="javascript:void(0)" onclick="filterBySeries('call-of-duty'); scrollToGames();" class="hover:text-gaming-codAccent transition-colors"><i class="fa-solid fa-gun ml-1 text-xs"></i> <span data-localize="filter-cod">إثارة Call of Duty</span></a></li>
+                        <li><a href="javascript:void(0)" onclick="filterBySeries('minecraft'); scrollToGames();" class="hover:text-gaming-mcAccent transition-colors"><i class="fa-solid fa-cube ml-1 text-xs"></i> <span data-localize="filter-mc">إبداع Minecraft</span></a></li>
+                    </ul>
+                </div>
+                <!-- Tech stack column -->
+                <div>
+                    <h4 class="text-white font-extrabold text-base mb-4 flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-solid fa-circle-info text-gaming-cleanAccent text-sm"></i> <span data-localize="footer-col-3">حول قاعدة البيانات</span>
+                    </h4>
+                    <p data-localize="footer-col-3-desc" class="text-sm text-gaming-textGray leading-relaxed">
+                        يتم تحديث جميع مواصفات الألعاب دورياً للتأكد من مطابقتها للمعايير والأنظمة الرسمية المصدرة من قبل الشركات العالمية لغاية عام 2026 الحالي.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-900 pt-6 text-center text-xs text-gaming-textGray">
+                <p data-localize="footer-disclaimer" class="mb-2">كل الأسماء والرسوميات والعلامات التجارية للألعاب المعروضة هي حقوق محفوظة لشركاتها ومطوريها الرسميين.</p>
+                <p>&copy; 2026 SpecLegend. <span data-localize="footer-copyright">جميع الحقوق محفوظة.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ar',
+                includedLanguages: 'en,fr,es,de,ja,zh-CN,ru,it,pt,ko',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        const uiTranslations = {
+            ar: {
+                "nav-subtitle": "بوابتك الأسطورية لمتطلبات تشغيل الألعاب",
+                "badge-active": "النسخة الأسطورية نشطة الآن",
+                "hero-top-badge": "قاعدة بيانات متكاملة وموثوقة بنسبة 100% حلال شرعاً",
+                "hero-title-1": "اعرف متطلبات تشغيل",
+                "hero-title-colored": "ألعابك المفضلة",
+                "hero-title-2": "في ثوانٍ!",
+                "hero-description": "تصفح المواصفات الرسمية ومعلومات سريعة ومفيدة عن أشهر ألعاب الكمبيوتر النظيفة والتعليمية والممتعة والآمنة الخالية من العنف والشبهات، إلى جانب السلاسل العالمية الشهيرة.",
+                "search-btn": "تصفح الكل",
+                "filter-title": "تصفية حسب السلسلة:",
+                "filter-all": "الكل",
+                "filter-re": "ريزيدنت إيفل",
+                "filter-cod": "كول أوف ديوتي",
+                "filter-mc": "ماين كرافت",
+                "filter-clean": "ألعاب عائلية ومحاكاة (حلال)",
+                "section-title": "قائمة ألعاب السلاسل الكبرى والخيارات العائلية",
+                "section-subtitle": "تصفح متطلبات التشغيل والمواصفات الكاملة للكمبيوتر لكل لعبة.",
+                "active-filter-label": "السلسلة النشطة:",
+                "no-results-title": "لم نجد أي لعبة تطابق بحثك!",
+                "no-results-subtitle": "يرجى مراجعة الاسم أو تجربة كتابة السلسلة مثل \"Forza\" أو \"Minecraft\" أو \"Flight\".",
+                "modal-global-rating": "التقييم العالمي",
+                "modal-release-year": "سنة الإصدار",
+                "tab-specs": "متطلبات تشغيل الكمبيوتر",
+                "tab-quick": "معلومات على السريع",
+                "specs-min-badge": "المستوى الأدنى",
+                "specs-min-title": "الحد الأدنى لتشغيل اللعبة",
+                "specs-rec-title": "الحد الموصى به (أفضل أداء)",
+                "spec-os": "نظام التشغيل:",
+                "spec-cpu": "المعالج:",
+                "spec-ram": "الذاكرة (RAM):",
+                "spec-gpu": "كرت الشاشة:",
+                "spec-dx": "إصدار DirectX:",
+                "spec-storage": "مساحة التخزين:",
+                "tip-title": "نصيحة تقنية:",
+                "tip-desc": "للحصول على تجربة لعب بدون تأخر أو تباطؤ في تحميل الخرائط، ننصح بشدة بتثبيت الألعاب الحديثة على قرص صلب من نوع SSD لضمان أقصى سرعة ممكنة.",
+                "info-label-dev": "المطور والمبرمج",
+                "info-label-pub": "الشركة الناشرة",
+                "info-label-plat": "المنصات المدعومة",
+                "info-desc-title": "نبذة عن القصة وأسلوب اللعب",
+                "info-label-engine": "محرك التطوير المستعمل:",
+                "modal-footer-copyright": "حقوق الألعاب والأسماء محفوظة لمطوريها الرسميين.",
+                "footer-brand-desc": "دليل عربي وعالمي أسطوري، حديث ومتكامل للتعرف على متطلبات تشغيل ألعاب الفيديو للكمبيوتر الشخصي بمختلف أنواعها النظيفة والآمنة تماماً.",
+                "footer-col-2": "السلاسل المدعومة حالياً",
+                "footer-col-3": "حول قاعدة البيانات",
+                "footer-col-3-desc": "يتم تحديث جميع مواصفات الألعاب دورياً للتأكد من مطابقتها للمعايير والأنظمة الرسمية المصدرة من قبل الشركات العالمية لغاية عام 2026 الحالي.",
+                "footer-disclaimer": "كل الأسماء، الرسوميات، والعلامات التجارية لـ Resident Evil و Call of Duty و Minecraft و EA Sports و Forza هي حقوق محفوظة لشركاتها ومطوريها الرسميين.",
+                "footer-copyright": "جميع الحقوق محفوظة لصالح SpecLegend.",
+                "btn-copy": "نسخ ومشاركة المواصفات",
+                "toast-success": "تم نسخ مواصفات اللعبة بنجاح إلى الحافظة!"
+            },
+            en: {
+                "nav-subtitle": "Your legendary portal for game specifications",
+                "badge-active": "Legendary version is active now",
+                "hero-top-badge": "Integrated & 100% Halal/Permissible Database",
+                "hero-title-1": "Check the specs of",
+                "hero-title-colored": "Your Favorite Games",
+                "hero-title-2": "in seconds!",
+                "hero-description": "Browse official requirements and quick, useful info for clean, educational, safe, and family-friendly PC games, alongside world-famous franchises.",
+                "search-btn": "Browse All",
+                "filter-title": "Filter by Series:",
+                "filter-all": "All",
+                "filter-re": "Resident Evil",
+                "filter-cod": "Call of Duty",
+                "filter-mc": "Minecraft",
+                "filter-clean": "Family & Simulation (Halal)",
+                "section-title": "Major Game Series & Family Options",
+                "section-subtitle": "Browse system requirements and full specifications for each game.",
+                "active-filter-label": "Active Series:",
+                "no-results-title": "No games match your search!",
+                "no-results-subtitle": "Please check the spelling or try searching for series names like 'Forza', 'Minecraft', or 'Flight'.",
+                "modal-global-rating": "Global Rating",
+                "modal-release-year": "Release Year",
+                "tab-specs": "System Requirements",
+                "tab-quick": "Quick Information",
+                "specs-min-badge": "Minimum",
+                "specs-min-title": "Minimum System Requirements",
+                "specs-rec-title": "Recommended (Best Performance)",
+                "spec-os": "Operating System:",
+                "spec-cpu": "Processor:",
+                "spec-ram": "Memory (RAM):",
+                "spec-gpu": "Graphics Card:",
+                "spec-dx": "DirectX Version:",
+                "spec-storage": "Storage Space:",
+                "tip-title": "Technical Tip:",
+                "tip-desc": "To get a smooth gaming experience without map delays or stutters, we highly recommend installing modern games on an SSD for maximum speed.",
+                "info-label-dev": "Developer",
+                "info-label-pub": "Publisher",
+                "info-label-plat": "Supported Platforms",
+                "info-desc-title": "About Story & Gameplay",
+                "info-label-engine": "Development Engine:",
+                "modal-footer-copyright": "Game rights and names are reserved to their official developers.",
+                "footer-brand-desc": "A legendary, modern, and integrated global guide to explore PC video game system requirements and detailed insights for various famous series.",
+                "footer-col-2": "Currently Supported Series",
+                "footer-col-3": "About Database",
+                "footer-col-3-desc": "All system requirements are updated regularly to ensure absolute compliance with official guidelines released by developers up to the year 2026.",
+                "footer-disclaimer": "All names, assets, and trademarks of Resident Evil, Call of Duty, Minecraft, EA Sports, and Forza are property of their respective owners.",
+                "footer-copyright": "All rights reserved to SpecLegend.",
+                "btn-copy": "Copy & Share Specs",
+                "toast-success": "Game specifications successfully copied to clipboard!"
+            },
+            fr: {
+                "nav-subtitle": "Votre portail légendaire pour les configs de jeux",
+                "badge-active": "La version légendaire est active",
+                "hero-top-badge": "Base de données 100% fiable & propre (Halal)",
+                "hero-title-1": "Découvrez la config de",
+                "hero-title-colored": "Vos Jeux Préférés",
+                "hero-title-2": "en quelques secondes!",
+                "hero-description": "Parcourez les configurations requises et les infos rapides des jeux familiaux, éducatifs et sains sur PC, ainsi que d'autres séries célèbres.",
+                "search-btn": "Tout Parcourir",
+                "filter-title": "Filtrer par Série:",
+                "filter-all": "Tout",
+                "filter-re": "Resident Evil",
+                "filter-cod": "Call of Duty",
+                "filter-mc": "Minecraft",
+                "filter-clean": "Famille & Simulation (Sain)",
+                "section-title": "Liste des Grandes Séries & Jeux Sains",
+                "section-subtitle": "Parcourez les configurations requises et les spécifications complètes pour chaque jeu.",
+                "active-filter-label": "Série Active:",
+                "no-results-title": "Aucun jeu ne correspond à votre recherche !",
+                "no-results-subtitle": "Veuillez vérifier l'orthographe ou essayer des termes comme 'Forza', 'Minecraft' ou 'Flight'.",
+                "modal-global-rating": "Note Globale",
+                "modal-release-year": "Année de Sortie",
+                "tab-specs": "Configuration Requise",
+                "tab-quick": "Informations Rapides",
+                "specs-min-badge": "Minimum",
+                "specs-min-title": "Configuration Minimale",
+                "specs-rec-title": "Recommandée (Meilleure Performance)",
+                "spec-os": "Système d'exploitation:",
+                "spec-cpu": "Processeur:",
+                "spec-ram": "Mémoire (RAM):",
+                "spec-gpu": "Carte Graphique:",
+                "spec-dx": "Version DirectX:",
+                "spec-storage": "Espace de Stockage:",
+                "tip-title": "Conseil Technique:",
+                "tip-desc": "Pour éviter les saccades et accélérer les chargements, nous vous conseillons vivement d'installer les jeux récents sur un disque SSD.",
+                "info-label-dev": "Développeur",
+                "info-label-pub": "Éditeur",
+                "info-label-plat": "Plateformes Supportées",
+                "info-desc-title": "À Propos de l'Histoire & Gameplay",
+                "info-label-engine": "Moteur de Développement:",
+                "modal-footer-copyright": "Les droits et les noms de jeux sont réservés aux développeurs officiels.",
+                "footer-brand-desc": "Un guide mondial légendaire et moderne pour explorer les configurations requises et les détails sur vos séries de jeux vidéo préférées.",
+                "footer-col-2": "Séries Actuellement Supportées",
+                "footer-col-3": "À Propos de la Base de Données",
+                "footer-col-3-desc": "Toutes les configurations sont mises à jour régulièrement pour s'assurer de leur exactitude officielle jusqu'en 2026.",
+                "footer-disclaimer": "Tous les noms, logos et marques de Resident Evil, Call of Duty, Minecraft, EA Sports, et Forza appartiennent à leurs propriétaires respectifs.",
+                "footer-copyright": "Tous droits réservés à SpecLegend.",
+                "btn-copy": "Copier et partager la configuration",
+                "toast-success": "Spécifications du jeu copiées avec succès dans le presse-papiers !"
+            },
+            es: {
+                "nav-subtitle": "Tu portal legendario de requisitos para juegos",
+                "badge-active": "La versión legendaria está activa ahora",
+                "hero-top-badge": "Base de datos 100% permitida (Halal) y segura",
+                "hero-title-1": "Descubre los requisitos de",
+                "hero-title-colored": "Tus Juegos Favoritos",
+                "hero-title-2": "¡en segundos!",
+                "hero-description": "Consulta especificaciones oficiales e información rápida de juegos educativos, de simulación y familiares para PC sin contenido inapropiado.",
+                "search-btn": "Ver Todos",
+                "filter-title": "Filtrar por Saga:",
+                "filter-all": "Todo",
+                "filter-re": "Resident Evil",
+                "filter-cod": "Call of Duty",
+                "filter-mc": "Minecraft",
+                "filter-clean": "Familiar & Simulación (Permitido)",
+                "section-title": "Lista de Grandes Sagas & Juegos Familiares",
+                "section-subtitle": "Explora los requisitos de sistema oficiales para computadoras personales.",
+                "active-filter-label": "Saga Activa:",
+                "no-results-title": "¡No encontramos ningún juego coincidente!",
+                "no-results-subtitle": "Por favor revisa el nombre o busca por sagas como 'Forza', 'Minecraft' o 'Flight'.",
+                "modal-global-rating": "Valoración Global",
+                "modal-release-year": "Año de Lanzamiento",
+                "tab-specs": "Requisitos del Sistema",
+                "tab-quick": "Información Rápida",
+                "specs-min-badge": "Mínimo",
+                "specs-min-title": "Requisitos Mínimos",
+                "specs-rec-title": "Recomendados (Mejor Rendimiento)",
+                "spec-os": "Sistema Operativo:",
+                "spec-cpu": "Procesador:",
+                "spec-ram": "Memoria (RAM):",
+                "spec-gpu": "Tarjeta Gráfica:",
+                "spec-dx": "Versión DirectX:",
+                "spec-storage": "Almacenamiento:",
+                "tip-title": "Consejo Técnico:",
+                "tip-desc": "Para disfrutar sin tirones o demoras de carga, recomendamos encarecidamente instalar los juegos modernos en un disco SSD.",
+                "info-label-dev": "Desarrollador",
+                "info-label-pub": "Distribuidora",
+                "info-label-plat": "Plataformas Soportadas",
+                "info-desc-title": "Sobre la Historia & Jugabilidad",
+                "info-label-engine": "Motor de Desarrollo:",
+                "modal-footer-copyright": "Todos los derechos de nombres de juegos reservados a sus desarrolladores.",
+                "footer-brand-desc": "Una guía legendaria y moderna para descubrir requisitos de hardware de PC de las sagas de videojuegos más importantes del planeta.",
+                "footer-col-2": "Sagas Soportadas Actualmente",
+                "footer-col-3": "Sobre la Base de Datos",
+                "footer-col-3-desc": "Actualizamos todas las especificaciones periódicamente con datos directos de los creadores oficiales para el presente año 2026.",
+                "footer-disclaimer": "Todos los nombres, marcas e imágenes de Resident Evil, Call of Duty, Minecraft, EA Sports, y Forza son marcas registradas de sus dueños.",
+                "footer-copyright": "Todos los derechos reservados a SpecLegend.",
+                "btn-copy": "Copiar y Compartir Requisitos",
+                "toast-success": "¡Requisitos de hardware copiados al portapapeles con éxito!"
+            }
+        };
+
+        const allGames = [
+            {
+                id: "fc-26",
+                series: "clean-games",
+                title: { ar: "إي آي سبورتس إف سي 26", en: "EA Sports FC 26", fr: "EA Sports FC 26", es: "EA Sports FC 26" },
+                year: 2026,
+                genre: { ar: "رياضة / محاكاة كرة قدم حماسية", en: "Sports / Football Simulation", fr: "Sport / Simulation de Football", es: "Deportes / Simulación de Fútbol" },
+                rating: "9.1/10",
+                cardImageColor: "from-sky-950 to-neutral-950",
+                description: {
+                    ar: "أحدث ثورة في عالم محاكاة كرة القدم لعام 2026. تحتوي اللعبة على رسوميات واقعية جداً تعتمد على محرك Frostbite المطور، ومحاكاة دقيقة لحركة اللاعبين الفردية والجماعية مع خلوها التام من أي محتوى عنيف.",
+                    en: "The latest state-of-the-art football simulation for 2026. Features hyper-realistic physics powered by the upgraded Frostbite engine, and updated world leagues. Completely free from violence or negative themes.",
+                    fr: "La toute nouvelle simulation de football de pointe pour la saison 2026. Des graphismes ultra-réalistes grâce au moteur Frostbite mis à jour, sans aucune violence.",
+                    es: "El simulador de fútbol definitivo para la temporada 2026, con físicas e hiperrealismo mejorados gracias al nuevo motor Frostbite. Un juego sano y competitivo para todos."
+                },
+                developer: "EA Vancouver",
+                publisher: "EA Sports",
+                platforms: "PC, PS4, PS5, Xbox One, Xbox Series X/S, Nintendo Switch",
+                engine: "Frostbite Engine",
+                specs: {
+                    min: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i5-8600K / AMD Ryzen 5 2600", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 1060 / AMD Radeon RX 580", dx: "Version 12", storage: "110 GB (SSD)" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i7-10700K / AMD Ryzen 7 3700X", ram: "16 GB RAM", gpu: "NVIDIA GeForce RTX 2060 / AMD Radeon RX 6600", dx: "Version 12", storage: "110 GB (SSD)" }
+                }
+            },
+            {
+                id: "forza-horizon-5",
+                series: "clean-games",
+                title: { ar: "فورزا هوريزون 5", en: "Forza Horizon 5", fr: "Forza Horizon 5", es: "Forza Horizon 5" },
+                year: 2021,
+                genre: { ar: "سباقات / عالم مفتوح وقيادة واقعية", en: "Racing / Open World Simulator", fr: "Course / Monde Ouvert", es: "Carreras / Mundo abierto" },
+                rating: "9.6/10",
+                cardImageColor: "from-sky-950 to-emerald-950",
+                description: {
+                    ar: "استكشف المناظر الطبيعية النابضة بالحياة والمتغيرة باستمرار في عالم المكسيك المفتوح، مع متعة قيادة لا حدود لها لمئات من أعظم السيارات في العالم. لعبة نظيفة تركز على القيادة وجمال الطبيعة.",
+                    en: "Explore the vibrant and ever-evolving open-world landscapes of Mexico with limitless, fun driving action in hundreds of the world's greatest cars. Pure, gorgeous racing gameplay.",
+                    fr: "Explorez les paysages magnifiques du Mexique au volant de centaines de voitures extraordinaires. Un jeu de course sain basé sur l'exploration de la nature.",
+                    es: "Explora los espectaculares paisajes de México en un mundo abierto sin límites, conduciendo cientos de los mejores vehículos del mundo. Ideal para toda la familia."
+                },
+                developer: "Playground Games",
+                publisher: "Xbox Game Studios",
+                platforms: "PC, Xbox One, Xbox Series X/S",
+                engine: "ForzaTech",
+                specs: {
+                    min: { os: "Windows 10 (1909)", cpu: "Intel Core i5-4460 / AMD Ryzen 3 1200", ram: "8 GB RAM", gpu: "NVIDIA GTX 970 / AMD RX 470", dx: "Version 12", storage: "110 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i7-10700K / AMD Ryzen 5 3600X", ram: "16 GB RAM", gpu: "NVIDIA RTX 2070 / AMD RX 5700 XT", dx: "Version 12", storage: "110 GB (SSD)" }
+                }
+            },
+            {
+                id: "flight-simulator-2024",
+                series: "clean-games",
+                title: { ar: "مايكروسوفت فلايت سيموليتور 2024", en: "Microsoft Flight Simulator 2024", fr: "Microsoft Flight Simulator 2024", es: "Microsoft Flight Simulator 2024" },
+                year: 2024,
+                genre: { ar: "محاكاة طيران حقيقية / جغرافيا علمية", en: "Aviation Simulator / Educational", fr: "Simulation Aérienne / Éducatif", es: "Simulador de Vuelo / Educativo" },
+                rating: "9.4/10",
+                cardImageColor: "from-blue-950 to-neutral-950",
+                description: {
+                    ar: "الجيل القادم من أقوى محاكي طيران في العالم. قم بقيادة طائرات مدنية وتجارية وتدريبية عبر محاكاة دقيقة جداً لحالة الطقس المباشرة وكوكب الأرض بأكمله، تنمي مهارات التخطيط وعلم الجغرافيا والهندسة.",
+                    en: "The next generation of the world's ultimate aviation simulator. Fly incredibly detailed commercial, private, and training aircraft in a fully simulated, real-time weather-tracked planet Earth.",
+                    fr: "Le simulateur de vol ultime nouvelle génération. Pilotez des avions civils et commerciaux avec une modélisation parfaite de la météo et de la Terre.",
+                    es: "La última generación de simulador de aviación. Pilota aviones comerciales o privados con recreación del clima en tiempo real. Increíblemente educativo y asombroso."
+                },
+                developer: "Asobo Studio",
+                publisher: "Xbox Game Studios",
+                platforms: "PC, Xbox Series X/S",
+                engine: "Asobo Engine",
+                specs: {
+                    min: { os: "Windows 10 (64-bit)", cpu: "Intel Core i7-6800K / AMD Ryzen 5 2600X", ram: "16 GB RAM", gpu: "NVIDIA GTX 970 / AMD RX 5700", dx: "Version 12", storage: "150 GB (SSD)" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i7-12700K / AMD Ryzen 7 5800X", ram: "32 GB RAM", gpu: "NVIDIA RTX 3070 / AMD RX 6800 XT", dx: "Version 12", storage: "150 GB (SSD)" }
+                }
+            },
+            {
+                id: "satisfactory",
+                series: "clean-games",
+                title: { ar: "ساتيسفاكتوري (بناء المصانع)", en: "Satisfactory", fr: "Satisfactory", es: "Satisfactory" },
+                year: 2024,
+                genre: { ar: "هندسة وبناء مصانع / خيال علمي هادئ", en: "Automation / Factory Building", fr: "Automatisation / Usines", es: "Automatización / Construcción" },
+                rating: "9.7/10",
+                cardImageColor: "from-sky-950 to-yellow-950",
+                description: {
+                    ar: "لعبة بناء مصانع ثلاثية الأبعاد بمنظور الشخص الأول مع تركيز كامل على الاستكشاف والأتمتة والهندسة. قم بتشييد مصانع ضخمة متعددة الطوابق ومصممة بدقة لتسيير خطوط الإنتاج والسيور الناقلة بكفاءة عالية وبدون عنف.",
+                    en: "A first-person open-world factory building game with a focus on automation, logistics, and scientific optimization. Design vast conveyor belts and automated train networks.",
+                    fr: "Un jeu de construction d'usines en vue à la première personne. Optimisez vos lignes de production et vos chemins de fer dans un monde splendide et sans violence.",
+                    es: "Un genial juego de construcción de fábricas y automatización en primera persona. Construye complejas cintas transportadoras y redes de transporte eficientes."
+                },
+                developer: "Coffee Stain Studios",
+                publisher: "Coffee Stain Publishing",
+                platforms: "PC",
+                engine: "Unreal Engine 5",
+                specs: {
+                    min: { os: "Windows 10 (64-bit)", cpu: "Intel Core i5-3570 / AMD equivalent", ram: "8 GB RAM", gpu: "NVIDIA GTX 1650 / AMD RX 570", dx: "Version 11", storage: "15 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i7-8700k / AMD Ryzen 5 3600", ram: "16 GB RAM", gpu: "NVIDIA RTX 2060 / AMD RX 5700 XT", dx: "Version 12", storage: "15 GB (SSD)" }
+                }
+            },
+            {
+                id: "portal-2",
+                series: "clean-games",
+                title: { ar: "بورتال 2", en: "Portal 2", fr: "Portal 2", es: "Portal 2" },
+                year: 2011,
+                genre: { ar: "ألغاز ومنطق / ذكاء فيزيائي", en: "Puzzle-Platformer", fr: "Plateforme de réflexion", es: "Puzles / Plataformas" },
+                rating: "9.9/10",
+                cardImageColor: "from-indigo-950 to-neutral-950",
+                description: {
+                    ar: "تحفة فنية فريدة تعتمد بالكامل على تشغيل العقل وحل الألغاز المعقدة عبر إطلاق بوابات زمنية ومكانية بالتعاون مع روبوتات مسلية وتفاعلية.",
+                    en: "A legendary puzzle game based on brainpower. Shoot portals to solve physical and spatial puzzles. Completely non-violent, intellectual, and highly entertaining.",
+                    fr: "Un jeu de réflexion légendaire. Tirez des portails dimensionnels pour résoudre des énigmes physiques complexes dans un univers fascinant et plein d'humour.",
+                    es: "Una obra maestra de lógica y físicas espaciales. Crea portales para resolver intrincados rompecabezas cooperativos o individuales. Altamente educativo."
+                },
+                developer: "Valve",
+                publisher: "Valve",
+                platforms: "PC, Xbox 360, PS3, Switch",
+                engine: "Source Engine",
+                specs: {
+                    min: { os: "Windows 7 / 8.1 / 10", cpu: "Intel Core 2 Duo / AMD Athlon 64", ram: "2 GB RAM", gpu: "NVIDIA GeForce 7600 GT / ATI Radeon X1600", dx: "Version 9.0c", storage: "8 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i3 / AMD equivalent", ram: "4 GB RAM", gpu: "NVIDIA GeForce GTX 260 / ATI Radeon HD 3870", dx: "Version 9.0c", storage: "8 GB space" }
+                }
+            },
+            {
+                id: "cities-skylines",
+                series: "clean-games",
+                title: { ar: "سيتيز: سكاي لاينز", en: "Cities: Skylines", fr: "Cities: Skylines", es: "Cities: Skylines" },
+                year: 2015,
+                genre: { ar: "بناء وإدارة المدن / تخطيط ومحاكاة", en: "City Builder / Management", fr: "Gestion / Simulation Urbaine", es: "Construcción de ciudades" },
+                rating: "9.5/10",
+                cardImageColor: "from-sky-950 to-neutral-950",
+                description: {
+                    ar: "أقوى وأمتع لعبة بناء وتخطيط عمراني على الإطلاق. قم بإنشاء وإدارة مدينتك الضخمة بداية من تعبيد الطرق وتقسيم المناطق السكنية والتجارية، وحتى حل الأزمات المرورية.",
+                    en: "The definitive modern city building simulation. Design, fund, manage, and scale up massive modern cities, solving traffic networks, taxes, and educational infrastructures.",
+                    fr: "La référence ultime de simulation de construction de villes. Gérez les budgets, concevez les réseaux routiers et bâtissez la mégapole de vos rêves.",
+                    es: "El mejor juego de simulación urbana moderna. Diseña, construye y administra tu propia metrópolis desde cero, lidiando con servicios y tráfico."
+                },
+                developer: "Colossal Order",
+                publisher: "Paradox Interactive",
+                platforms: "PC, PS4, Xbox One, Switch",
+                engine: "Unity",
+                specs: {
+                    min: { os: "Windows 10 (64-bit)", cpu: "Intel Core i3-3220 / AMD FX-6300", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 660 / AMD Radeon HD 7870", dx: "Version 11", storage: "4 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i5-3470 / AMD FX-8350", ram: "16 GB RAM", gpu: "NVIDIA GeForce GTX 960 / AMD Radeon R9 280X", dx: "Version 11", storage: "4 GB space" }
+                }
+            },
+            {
+                id: "overcooked-2",
+                series: "clean-games",
+                title: { ar: "أوفركوكد! 2", en: "Overcooked! 2", fr: "Overcooked! 2", es: "Overcooked! 2" },
+                year: 2018,
+                genre: { ar: "طبخ تفاعلي / عمل جماعي وتعاوني", en: "Cooperative / Party Game", fr: "Coopération / Party Game", es: "Cooperativo / Fiesta" },
+                rating: "9.0/10",
+                cardImageColor: "from-amber-950 to-sky-950",
+                description: {
+                    ar: "عد إلى مملكة البصل وقم بجمع فريقك من الطهاة في لعبة ممتعة للتعاون الفوري المليء بالحماس والمرح البريء. تغلب على عوائق المطابخ المتحركة والتنسيق السريع مع الأصدقاء.",
+                    en: "Return to the Onion Kingdom and assemble your team of chefs in classic cooperative cooking action. Coordinates with friends in increasingly absurd and dynamic kitchens.",
+                    fr: "Retournez dans le Royaume Oignon et rassemblez votre équipe de chefs dans des cuisines dynamiques et délirantes. Une excellente coopération saine.",
+                    es: "Regresa al Reino Cebolla y reúne a tu equipo de chefs en este divertidísimo juego cooperativo. Excelente para entrenar reflejos y coordinar tareas."
+                },
+                developer: "Ghost Town Games",
+                publisher: "Team17",
+                platforms: "PC, PS4, PS5, Xbox, Switch",
+                engine: "Unity",
+                specs: {
+                    min: { os: "Windows 7 (64-bit)", cpu: "Intel Core 2 Duo E8400 / AMD Phenom II X2 550", ram: "4 GB RAM", gpu: "NVIDIA GTS 450 / AMD Radeon HD 5750", dx: "Version 11", storage: "3 GB space" },
+                    rec: { os: "Windows 10 (64-bit)", cpu: "Intel Core i5-2400 / AMD Phenom II X6 1100T", ram: "6 GB RAM", gpu: "NVIDIA GTX 650 / AMD Radeon HD 7850", dx: "Version 11", storage: "3 GB space" }
+                }
+            },
+            {
+                id: "stardew-valley",
+                series: "clean-games",
+                title: { ar: "ستاردو فالي", en: "Stardew Valley", fr: "Stardew Valley", es: "Stardew Valley" },
+                year: 2016,
+                genre: { ar: "محاكاة حياة وزراعة هادئة / تقمص أدوار", en: "Farming / Life Simulator", fr: "Simulation Agricole / Vie", es: "Simulador de vida / Granja" },
+                rating: "9.8/10",
+                cardImageColor: "from-green-950 to-yellow-900",
+                description: {
+                    ar: "لقد ورثت قطعة أرض زراعية قديمة من جدك في وادي ستاردو المهدئ للأعصاب. خذ بعض الأدوات والقطع النقدية البسيطة وابدأ حياتك الجديدة كزارع ومستكشف ومخطط لحقل أحلامك.",
+                    en: "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools, set out to start a peaceful new life, farming crops and raising animals.",
+                    fr: "Vous héritez de la vieille ferme de votre grand-père. Armé de quelques outils, commencez une nouvelle vie paisible, cultivez des légumes et élevez des animaux.",
+                    es: "Heredaste la vieja granja de tu abuelo en Stardew Valley. Toma herramientas rudimentarias y comienza una nueva y pacífica vida cultivando y criando animales."
+                },
+                developer: "ConcernedApp",
+                publisher: "ConcernedApp",
+                platforms: "PC, macOS, Mobile, PS4, Xbox, Switch",
+                engine: "Custom (C#)",
+                specs: {
+                    min: { os: "Windows 7 or greater", cpu: "2.0 GHz Processor", ram: "2 GB RAM", gpu: "256 MB Video Memory, Shader Model 3.0+", dx: "Version 10", storage: "500 MB space" },
+                    rec: { os: "Windows 10/11", cpu: "2.5 GHz Processor", ram: "4 GB RAM", gpu: "512 MB Video Memory", dx: "Version 10", storage: "500 MB space" }
+                }
+            },
+            {
+                id: "rocket-league",
+                series: "clean-games",
+                title: { ar: "روكيت ليغ (كرة قدم السيارات)", en: "Rocket League", fr: "Rocket League", es: "Rocket League" },
+                year: 2015,
+                genre: { ar: "رياضة / سيارات وكرة قدم تفاعلية", en: "Sports / Arcade Racing", fr: "Sport / Course Arcade", es: "Deportes / Carreras arcade" },
+                rating: "9.2/10",
+                cardImageColor: "from-sky-950 to-blue-950",
+                description: {
+                    ar: "كرة قدم بأسلوب آركيد عالي الحماس تعتمد على محاكاة واقعية لحركة السيارات النفاثة المصممة للاندفاع والتسجيل وإشعال التحدي السريع في الملاعب بدون أي محظورات.",
+                    en: "High-octane hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition.",
+                    fr: "Un mélange survitaminé de football de style arcade et de chaos automobile avec des voitures équipées de fusées.",
+                    es: "Un vibrante híbrido de fútbol arcade y caos vehicular. Conduce increíbles coches de propulsión a cohete y compite para marcar goles."
+                },
+                developer: "Psyonix",
+                publisher: "Epic Games",
+                platforms: "PC, PS4, PS5, Xbox One, Nintendo Switch",
+                engine: "Unreal Engine 4",
+                specs: {
+                    min: { os: "Windows 7 (64-bit) or newer", cpu: "2.5 GHz Dual Core Processor", ram: "4 GB RAM", gpu: "NVIDIA GeForce GTX 760 / AMD Radeon R9 270X", dx: "Version 11", storage: "20 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "3.0+ GHz Quad Core Processor", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 1060 / AMD Radeon RX 470", dx: "Version 11", storage: "20 GB space" }
+                }
+            },
+            {
+                id: "beamng-drive",
+                series: "clean-games",
+                title: { ar: "بيم إن جي درايف", en: "BeamNG.drive", fr: "BeamNG.drive", es: "BeamNG.drive" },
+                year: 2015,
+                genre: { ar: "محاكاة واقعية وحوادث / فيزياء سيارات", en: "Vehicle Physics Simulator", fr: "Simulation de physique automobile", es: "Simulador de físicas de vehículos" },
+                rating: "9.7/10",
+                cardImageColor: "from-blue-950 to-slate-900",
+                description: {
+                    ar: "لعبة محاكاة فيزياء الأجسام اللينة الفريدة من نوعها. تقدم أدق تجربة قيادة وحوادث سيارات واقعية مبنية على الحسابات الهندسية الدقيقة لتعلم توازن المركبات واختبار مهارات القيادة.",
+                    en: "A dynamic soft-body physics vehicle simulator capable of doing just about anything. Extremely realistic driving mechanics and crash simulations.",
+                    fr: "Un simulateur physique de véhicules de corps mous d'un réalisme stupéfiant. Des sensations de conduite inégalées et des crashs scientifiques.",
+                    es: "Un dinámico simulador de físicas de cuerpos blandos para vehículos capaz de recrear cualquier colisión con absoluto realismo matemático."
+                },
+                developer: "BeamNG",
+                publisher: "BeamNG",
+                platforms: "PC",
+                engine: "Torque 3D / Modified",
+                specs: {
+                    min: { os: "Windows 10 (64-bit)", cpu: "Intel Core i3-6300 / AMD Ryzen 3 1200", ram: "16 GB RAM", gpu: "NVIDIA GeForce GTX 970 / AMD Radeon R9 290", dx: "Version 11", storage: "45 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i7-6700 / AMD Ryzen 7 1700", ram: "32 GB RAM", gpu: "NVIDIA GeForce RTX 2060 / AMD Radeon RX 5600 XT", dx: "Version 12", storage: "50 GB (SSD)" }
+                }
+            },
+            {
+                id: "kerbal-space-program",
+                series: "clean-games",
+                title: { ar: "برنامج كيربال للفضاء", en: "Kerbal Space Program", fr: "Kerbal Space Program", es: "Kerbal Space Program" },
+                year: 2015,
+                genre: { ar: "هندسة وغزو فضاء / علمي تعليمي", en: "Space Flight Simulation / Science", fr: "Simulation Spatiale / Éducation", es: "Simulador espacial / Educativo" },
+                rating: "9.5/10",
+                cardImageColor: "from-teal-950 to-neutral-950",
+                description: {
+                    ar: "تولَّ مسؤولية برنامج الفضاء لمخلوقات الكيربال الغريبة. ابنِ مركبات فضائية وصواريخ علمية حقيقية بالاعتماد على قوانين الفيزياء الفلكية وقوانين الجاذبية والديناميكا الهوائية.",
+                    en: "Take charge of the space program for the alien race known as the Kerbals. Build space-worthy craft and fly orbital missions using actual aerodynamic and orbital physics.",
+                    fr: "Prenez le contrôle du programme spatial de la race extraterrestre des Kerbals. Construisez des fusées réalistes basées sur la physique orbitale.",
+                    es: "Dirige el programa espacial de los Kerbals. Construye naves espaciales y cohetes basados en leyes reales de la física orbital y aerodinámica."
+                },
+                developer: "Squad",
+                publisher: "Private Division",
+                platforms: "PC, PS4, Xbox One, PS5, Xbox Series X/S",
+                engine: "Unity",
+                specs: {
+                    min: { os: "Windows 7 SP1+ (64-bit)", cpu: "Intel Core 2 Duo / AMD Athlon 64 X2", ram: "4 GB RAM", gpu: "DX10 Capable Video Card (512MB VRAM)", dx: "Version 10", storage: "4 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i5 / AMD equivalent", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 970 / AMD Radeon R9 290", dx: "Version 11", storage: "6 GB space" }
+                }
+            },
+            {
+                id: "trackmania",
+                series: "clean-games",
+                title: { ar: "تراكمانيا", en: "Trackmania", fr: "Trackmania", es: "Trackmania" },
+                year: 2020,
+                genre: { ar: "سباق سرعة / بناء حلبات وتنافس هادئ", en: "Racing / Time-Trial", fr: "Course / Contre-la-montre", es: "Carreras / Contrarreloj" },
+                rating: "8.9/10",
+                cardImageColor: "from-blue-950 to-emerald-950",
+                description: {
+                    ar: "لعبة سباق السيارات الأسرع والأكثر مهارة ونقاءً. تنافس ضد عقارب الساعة في مسارات وحلبات معقدة صممها مجتمع اللاعبين، خالية من أي صدمات أو تفاصيل غير لائقة.",
+                    en: "The biggest and most compelling remake of the legendary racing franchise. Focuses purely on driving precision, time-trials, and creative track-building.",
+                    fr: "Le remake le plus complet de la franchise de course légendaire. Concentrez-vous sur la précision de conduite et le contre-la-montre.",
+                    es: "La entrega definitiva de la aclamada saga de velocidad. Centrado puramente en la precisión al volante, contrarrelojes y construcción creativa."
+                },
+                developer: "Ubisoft Nadeo",
+                publisher: "Ubisoft",
+                platforms: "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+                engine: "Nadeo ManiaPlanet Engine",
+                specs: {
+                    min: { os: "Windows 10 (64-bit)", cpu: "Intel Core i5-2500K / AMD FX-6100", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 660 / AMD Radeon HD 7870", dx: "Version 11", storage: "2 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i7-4790K / AMD Ryzen 5 1500X", ram: "16 GB RAM", gpu: "NVIDIA GeForce GTX 970 / AMD Radeon RX 480", dx: "Version 11", storage: "2 GB (SSD)" }
+                }
+            },
+
+            {
+                id: "re4-remake",
+                series: "resident-evil",
+                title: { ar: "ريزيدنت إيفل 4 (ريميك)", en: "Resident Evil 4 (Remake)", fr: "Resident Evil 4 (Remake)", es: "Resident Evil 4 (Remake)" },
+                year: 2023,
+                genre: { ar: "رعب بقاء / حركة", en: "Survival Horror / Action", fr: "Survival Horror / Action", es: "Terror de supervivencia / Acción" },
+                rating: "9.7/10",
+                cardImageColor: "from-red-950 to-neutral-950",
+                description: {
+                    ar: "ينطلق العميل الخاص ليون كينيدي لإنقاذ ابنة الرئيس الأمريكي التي تعرضت للاختطاف في قرية أوروبية غامضة ومعزولة يسكنها قرويون مصابون بطفيلي مجهول، تجمع اللعبة الإثارة والرعب والرسوميات المحدثة بشكل مذهل عبر محرك RE Engine الشهير.",
+                    en: "Special agent Leon S. Kennedy embarks on a dangerous mission to rescue the US President's kidnapped daughter from a secluded European village controlled by a mind-controlling parasite, blending intense action and gorgeous modernized graphics.",
+                    fr: "Leon S. Kennedy, agent spécial, est envoyé pour secourir la fille du président américain, enlevée et retenue dans un village européen isolé et mystérieux où sévit un parasite terrifiant.",
+                    es: "Leon S. Kennedy viaja a un aislado pueblo europeo para rescatar a la hija del presidente de los Estados Unidos, descubriendo una terrible conspiración biológica."
+                },
+                developer: "Capcom",
+                publisher: "Capcom",
+                platforms: "PC, PS4, PS5, Xbox Series X/S",
+                engine: "RE Engine",
+                specs: {
+                    min: { os: "Windows 10 (64 bit)", cpu: "AMD Ryzen 3 1200 / Intel Core i5-7500", ram: "8 GB RAM", gpu: "AMD Radeon RX 560 / NVIDIA GeForce GTX 1050 Ti", dx: "Version 12", storage: "55 GB space" },
+                    rec: { os: "Windows 10/11 (64 bit)", cpu: "AMD Ryzen 5 3600 / Intel Core i7-8700", ram: "16 GB RAM", gpu: "AMD Radeon RX 5700 / NVIDIA GeForce GTX 1070 / RTX 2060", dx: "Version 12", storage: "55 GB (SSD)" }
+                }
+            },
+            {
+                id: "re8-village",
+                series: "resident-evil",
+                title: { ar: "ريزيدنت إيفل 8: فيليج", en: "Resident Evil Village (RE 8)", fr: "Resident Evil Village", es: "Resident Evil Village" },
+                year: 2021,
+                genre: { ar: "رعب بقاء / منظور أول", en: "Survival Horror / FPS", fr: "Survival Horror / FPS", es: "Terror / Primera Persona" },
+                rating: "9.5/10",
+                cardImageColor: "from-stone-900 to-red-950",
+                description: {
+                    ar: "تدور أحداث القصة بعد سنوات من الأحداث المروعة في الجزء السابع. يجد إيثان وينترز نفسه تائهاً في قرية ثلجية ملعونة تسكنها وحوش غريبة وعائلة مصاصة دماء شهيرة بقيادة ليدي ديميتريسكو.",
+                    en: "Set a few years after Resident Evil 7, Ethan Winters is thrown into a cursed, snowy European village infested with lycans and ruled by four terrifying lords, including Lady Dimitrescu.",
+                    fr: "Quelques années après les événements de Resident Evil 7, Ethan Winters se retrouve projeté dans un village enneigé et maudit, dominé par de terrifiantes créatures.",
+                    es: "Años después del fin de RE7, Ethan Winters es arrastrado a un siniestro pueblo cubierto de nieve repleto de monstruos licántropos y señores vampiros."
+                },
+                developer: "Capcom",
+                publisher: "Capcom",
+                platforms: "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+                engine: "RE Engine",
+                specs: {
+                    min: { os: "Windows 10 (64 bit)", cpu: "AMD Ryzen 3 1200 / Intel Core i5-7500", ram: "8 GB RAM", gpu: "AMD Radeon RX 560 / NVIDIA GeForce GTX 1050 Ti", dx: "Version 12", storage: "50 GB space" },
+                    rec: { os: "Windows 10/11 (64 bit)", cpu: "AMD Ryzen 5 3600 / Intel Core i7-8700", ram: "16 GB RAM", gpu: "AMD Radeon RX 5700 / NVIDIA GeForce GTX 1070 / RTX 2070", dx: "Version 12", storage: "50 GB (SSD)" }
+                }
+            },
+            {
+                id: "re2-remake",
+                series: "resident-evil",
+                title: { ar: "ريزيدنت إيفل 2 (ريميك)", en: "Resident Evil 2 (Remake)", fr: "Resident Evil 2 (Remake)", es: "Resident Evil 2 (Remake)" },
+                year: 2019,
+                genre: { ar: "رعب بقاء / حركة", en: "Survival Horror / Action", fr: "Survival Horror / Action", es: "Terror de supervivencia" },
+                rating: "9.8/10",
+                cardImageColor: "from-indigo-950 to-neutral-950",
+                description: {
+                    ar: "إعادة بناء كاملة لنسخة 1998 الأسطورية. تابع قصة الشرطي المبتدئ ليون كينيدي والطالبة الجامعية كلير ريدفيلد ومحاولاتهم للهروب من مركز شرطة راكون بعد انتشار الفيروس الفتاك والهروب من وحش مستر إكس العنيف.",
+                    en: "A masterpiece remake of the 1998 original. Follow rookie cop Leon Kennedy and college student Claire Redfield as they try to survive a catastrophic zombie outbreak in Raccoon City and escape the relentless Tyrant (Mr. X).",
+                    fr: "Un remake d'une qualité exceptionnelle. Suivez Leon Kennedy et Claire Redfield fuyant le commissariat de Raccoon City assiégé par les zombies et traqués par l'infatigable Mr. X.",
+                    es: "Una obra maestra que reimagina el clásico de 1998. El oficial novato Leon Kennedy y la universitaria Claire Redfield intentan escapar de una Raccoon City plagada de zombis."
+                },
+                developer: "Capcom",
+                publisher: "Capcom",
+                platforms: "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+                engine: "RE Engine",
+                specs: {
+                    min: { os: "Windows 10 (64-bit)", cpu: "Intel Core i5-4460 / AMD FX-6300", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 760 / AMD Radeon R7 260x", dx: "Version 11", storage: "26 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i7-3770 / AMD FX-9590", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 1060 / AMD Radeon RX 480", dx: "Version 11", storage: "26 GB space" }
+                }
+            },
+
+            {
+                id: "cod-bo6",
+                series: "call-of-duty",
+                title: { ar: "كول أوف ديوتي: بلاك أوبس 6", en: "Call of Duty: Black Ops 6", fr: "Call of Duty: Black Ops 6", es: "Call of Duty: Black Ops 6" },
+                year: 2024,
+                genre: { ar: "تصويب منظور أول / حركة", en: "First-Person Shooter", fr: "Tir à la première personne", es: "Disparos en primera persona" },
+                rating: "9.3/10",
+                cardImageColor: "from-orange-950 to-zinc-950",
+                description: {
+                    ar: "تدور أحداث اللعبة في حقبة التسعينات بعد الحرب الباردة، حيث تقود فرقة عسكرية متمردة ومطاردة من قبل وكالة الاستخبارات الأمريكية نفسها. تتميز بنظام حركة ثوري (Omnimovement) يتيح الركض والقفز والزحف بـ 360 درجة.",
+                    en: "Set in the early 1990s, Black Ops 6 is a mind-bending military action thriller where players go rogue, hunted from within. Features the revolutionary Omnimovement system enabling 360-degree sprint, slide, and dive.",
+                    fr: "Plongez dans l'espionnage des années 90. Black Ops 6 offre une campagne palpitante avec le système de mouvement omnidirectionnel (Omnimovement) révolutionnaire.",
+                    es: "Ambientado a inicios de los 90, Black Ops 6 ofrece una campaña de espionaje militar de alta traición con el nuevo e increíble movimiento omnidireccional en 360 grados."
+                },
+                developer: "Treyarch / Raven Software",
+                publisher: "Activision",
+                platforms: "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+                engine: "IW 9.0",
+                specs: {
+                    min: { os: "Windows 10 (64-bit)", cpu: "AMD Ryzen 5 1400 / Intel Core i5-6600", ram: "8 GB RAM", gpu: "AMD Radeon RX 470 / NVIDIA GeForce GTX 960 / GTX 1650", dx: "Version 12", storage: "149 GB (SSD)" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "AMD Ryzen 5 1600X / Intel Core i7-6700K", ram: "16 GB RAM", gpu: "AMD Radeon RX 6600XT / NVIDIA GeForce GTX 1080Ti / RTX 3060", dx: "Version 12", storage: "149 GB (SSD)" }
+                }
+            },
+            {
+                id: "cod-warzone",
+                series: "call-of-duty",
+                title: { ar: "كول أوف ديوتي: وارسون", en: "Call of Duty: Warzone", fr: "Call of Duty: Warzone", es: "Call of Duty: Warzone" },
+                year: 2020,
+                genre: { ar: "باتل رويال / تصويب", en: "Battle Royale / FPS", fr: "Battle Royale / Tir", es: "Battle Royale / Disparos" },
+                rating: "8.8/10",
+                cardImageColor: "from-amber-950 to-neutral-950",
+                description: {
+                    ar: "تجربة باتل رويال مجانية وشديدة الضخامة ومثيرة للغاية من عالم Call of Duty الشهير. اهبط مع فريقك في خرائط عملاقة، واجمع الموارد، وقاتل حتى الموت للبقاء كآخر فرقة حية.",
+                    en: "The massive free-to-play battle royale experience from the world of Call of Duty. Drop in with friends, loot, load up, and fight through enormous maps to be the last squad standing.",
+                    fr: "Le Battle Royale légendaire et gratuit de Call of Duty. Parachutez-vous avec vos alliés, ramassez des armes et luttez pour la victoire.",
+                    es: "La experiencia masiva y gratuita de Battle Royale del universo Call of Duty. Desciende en mapas gigantescos y combate hasta ser el último pelotón en pie."
+                },
+                developer: "Infinity Ward / Raven Software",
+                publisher: "Activision",
+                platforms: "PC, PS4, PS5, Xbox One, Xbox Series X/S",
+                engine: "IW 9.0",
+                specs: {
+                    min: { os: "Windows 10 (64-bit)", cpu: "Intel Core i3-6100 / AMD Ryzen 3 1200", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 960 / AMD Radeon RX 470", dx: "Version 12", storage: "120 GB (SSD)" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i5-2500K / AMD Ryzen 5 1600X", ram: "12 GB RAM", gpu: "NVIDIA GeForce GTX 1660 / RTX 2060 / AMD RX 580", dx: "Version 12", storage: "120 GB (SSD)" }
+                }
+            },
+
+            {
+                id: "mc-classic",
+                series: "minecraft",
+                title: { ar: "ماين كرافت (النسخة الكلاسيكية)", en: "Minecraft (Java & Bedrock)", fr: "Minecraft (Java & Bedrock)", es: "Minecraft (Java & Bedrock)" },
+                year: 2011,
+                genre: { ar: "بقاء / بناء وعالم مفتوح", en: "Sandbox / Survival", fr: "Bac à sable / Survie", es: "Mundo abierto / Supervivencia" },
+                rating: "9.9/10",
+                cardImageColor: "from-green-950 to-neutral-950",
+                description: {
+                    ar: "اللعبة الأكثر مبيعاً في تاريخ الألعاب على الإطلاق. استكشف عوالم ثلاثية الأبعاد لا نهاية لها مولدة تلقائياً، واجمع الموارد، واصنع الأدوات، وابنِ أي شيء تتخيله في طور الإبداع أو حاول البقاء.",
+                    en: "The best-selling video game in history. Explore infinite, randomly generated 3D worlds, mine resources, craft tools, build majestic castles or try to survive dangerous monsters.",
+                    fr: "Le jeu le plus vendu de tous les temps. Explorez des mondes infinis, rassemblez des ressources et fabriquez tout ce que votre imagination peut concevoir.",
+                    es: "El videojuego más vendido de la historia. Explora mundos infinitos en 3D generados al azar, extrae recursos y sobrevive al peligro de la noche."
+                },
+                developer: "Mojang Studios",
+                publisher: "Xbox Game Studios",
+                platforms: "PC, macOS, Mobile, PS4, Xbox, Switch",
+                engine: "Java / C++ (Bedrock)",
+                specs: {
+                    min: { os: "Windows 7 SP1 / Windows 10 (64-bit)", cpu: "Intel Core i3-3210 / AMD A8-7600", ram: "4 GB RAM", gpu: "Intel HD Graphics 4000 / AMD Radeon R5", dx: "OpenGL 4.4", storage: "4 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i5-4690 / AMD A10-7800", ram: "8 GB RAM", gpu: "NVIDIA GeForce 700 Series / AMD Radeon Rx 200", dx: "OpenGL 4.5", storage: "4 GB (SSD)" }
+                }
+            },
+            {
+                id: "mc-legends",
+                series: "minecraft",
+                title: { ar: "ماين كرافت ليجندز", en: "Minecraft Legends", fr: "Minecraft Legends", es: "Minecraft Legends" },
+                year: 2023,
+                genre: { ar: "إستراتيجية أكشن / مغامرات", en: "Action Strategy / Adventure", fr: "Action Stratégie / Aventure", es: "Estrategia de acción" },
+                rating: "8.0/10",
+                cardImageColor: "from-green-950 to-teal-950",
+                description: {
+                    ar: "اكتشف أسرار Minecraft Legends، وهي لعبة استراتيجية أكشن ملحمية جديدة. استكشف أرضاً غنية ومسالمة على حافة الدمار بسبب غزو الـ Piglins الناريين والشرسين.",
+                    en: "Uncover the mysteries of Minecraft Legends, an epic new action strategy game. Explore a gentle land of rich resources and lush biomes on the brink of destruction from the piglin invasion.",
+                    fr: "Découvrez les mystères de Minecraft Legends, un jeu d'action-stratégie épique. Unissez les créatures du Monde des surfaces pour vaincre l'invasion des piglins.",
+                    es: "Descubre los misterios de Minecraft Legends, un épico videojuego de estrategia y acción. Lidera a las criaturas del Overworld contra los destructivos piglins."
+                },
+                developer: "Mojang / Blackbird Interactive",
+                publisher: "Xbox Game Studios",
+                platforms: "PC, PS4, PS5, Xbox One, Xbox Series X/S, Switch",
+                engine: "Custom Engine",
+                specs: {
+                    min: { os: "Windows 10 (64-bit) / Windows 11", cpu: "Intel Core i5 2.8GHz / AMD equivalent", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 760 / AMD Radeon R9 280", dx: "Version 12", storage: "24 GB space" },
+                    rec: { os: "Windows 10/11 (64-bit)", cpu: "Intel Core i5 3.4GHz / AMD equivalent", ram: "8 GB RAM", gpu: "NVIDIA GeForce GTX 1060 / AMD Radeon RX 580", dx: "Version 12", storage: "24 GB space" }
+                }
+            }
+        ];
+
+        let activeLang = 'ar';
+        let currentActiveSeries = 'all';
+
+        function changeLanguage(lang) {
+            activeLang = lang;
+            
+            // Set dynamic text directions based on language
+            const htmlElement = document.documentElement;
+            if (lang === 'ar') {
+                htmlElement.setAttribute('dir', 'rtl');
+                htmlElement.setAttribute('lang', 'ar');
+            } else {
+                htmlElement.setAttribute('dir', 'ltr');
+                htmlElement.setAttribute('lang', lang);
+            }
+
+            // Localize elements with the custom property
+            document.querySelectorAll('[data-localize]').forEach(el => {
+                const key = el.getAttribute('data-localize');
+                if (uiTranslations[lang] && uiTranslations[lang][key]) {
+                    el.innerHTML = uiTranslations[lang][key];
+                }
+            });
+
+            // Localize search input placeholder
+            const searchInput = document.getElementById('search-input');
+            if (lang === 'ar') {
+                searchInput.placeholder = "ابحث باسم اللعبة بالإنجليزية أو العربية... (مثال: Forza)";
+            } else if (lang === 'fr') {
+                searchInput.placeholder = "Rechercher par titre de jeu... (ex: Microsoft Flight)";
+            } else if (lang === 'es') {
+                searchInput.placeholder = "Buscar por título de juego... (ej: Minecraft)";
+            } else {
+                searchInput.placeholder = "Search by game title... (e.g. Forza)";
+            }
+
+            // Refresh cards rendering with new language
+            filterBySeries(currentActiveSeries);
+        }
+
+        function renderGames(gamesList) {
+            const container = document.getElementById('games-container');
+            const noResults = document.getElementById('no-results');
+            
+            container.innerHTML = '';
+            
+            if (gamesList.length === 0) {
+                noResults.classList.remove('hidden');
+                container.classList.add('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+                container.classList.remove('hidden');
+            }
+
+            gamesList.forEach(game => {
+                const card = document.createElement('div');
+                
+                // Customize badges and highlights dynamically based on game series
+                let seriesBadgeClass = "bg-gaming-accent text-white";
+                let borderHighlightClass = "hover:border-gaming-accent/60 shadow-gaming-accent/5";
+                
+                if (game.series === "call-of-duty") {
+                    seriesBadgeClass = "bg-gaming-codAccent text-black font-black";
+                    borderHighlightClass = "hover:border-gaming-codAccent/60 shadow-gaming-codAccent/5";
+                } else if (game.series === "minecraft") {
+                    seriesBadgeClass = "bg-gaming-mcAccent text-black font-black";
+                    borderHighlightClass = "hover:border-gaming-mcAccent/60 shadow-gaming-mcAccent/5";
+                } else if (game.series === "clean-games") {
+                    seriesBadgeClass = "bg-gaming-cleanAccent text-black font-black";
+                    borderHighlightClass = "hover:border-gaming-cleanAccent/60 shadow-gaming-cleanAccent/5";
+                }
+                
+                card.className = `bg-gaming-card border border-gray-800/80 rounded-3xl overflow-hidden ${borderHighlightClass} transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-lg flex flex-col justify-between`;
+                card.onclick = () => openModal(game.id);
+                
+                const gameTitle = game.title[activeLang] || game.title['en'];
+                const gameGenre = game.genre[activeLang] || game.genre['en'];
+                
+                // Set correct labels dynamically based on current selected language
+                const releaseYearLabel = activeLang === 'ar' ? 'سنة الإصدار' : (activeLang === 'fr' ? 'Année de sortie' : (activeLang === 'es' ? 'Año de salida' : 'Release Year'));
+                const ratingLabel = activeLang === 'ar' ? 'التقييم' : (activeLang === 'fr' ? 'Évaluation' : (activeLang === 'es' ? 'Clasificación' : 'Rating'));
+                const btnLabel = activeLang === 'ar' ? 'مواصفات التشغيل والمعلومات' : (activeLang === 'fr' ? 'Spécifications et infos' : (activeLang === 'es' ? 'Especificaciones e info' : 'Specifications & Info'));
+
+                card.innerHTML = `
+                    <div class="relative h-48 bg-gradient-to-br ${game.cardImageColor} flex items-center justify-center p-6 text-center border-b border-gray-800/40">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <div class="relative z-10 w-full">
+                            <span class="${seriesBadgeClass} text-xs font-bold px-3 py-1 rounded-md mb-2 inline-block shadow-sm">${gameGenre}</span>
+                            <h3 class="text-xl font-black text-white leading-tight drop-shadow-md">${gameTitle}</h3>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3 mb-5">
+                            <div class="flex items-center justify-between text-xs text-gaming-textGray">
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-calendar text-xs"></i> ${releaseYearLabel}:</span>
+                                <span class="text-white font-bold font-mono">${game.year}</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-gaming-textGray">
+                                <span class="flex items-center gap-1"><i class="fa-regular fa-star text-xs"></i> ${ratingLabel}:</span>
+                                <span class="text-yellow-400 font-extrabold flex items-center gap-1"><i class="fa-solid fa-star text-xs"></i> ${game.rating}</span>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-800/50 pt-4">
+                            <button class="w-full bg-white/5 hover:bg-white/10 text-white text-xs font-bold py-3 px-4 rounded-xl transition-all duration-200 text-center flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-list-check text-gaming-cleanAccent"></i>
+                                <span>${btnLabel}</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        const searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            if (query === "") {
+                if (currentActiveSeries === 'all') {
+                    renderGames(allGames);
+                } else {
+                    const filtered = allGames.filter(game => game.series === currentActiveSeries);
+                    renderGames(filtered);
+                }
+                return;
+            }
+
+            // Search matches titles and genres across all languages natively
+            const filtered = allGames.filter(game => {
+                const searchAr = (game.title.ar || '').toLowerCase().includes(query);
+                const searchEn = (game.title.en || '').toLowerCase().includes(query);
+                const searchFr = (game.title.fr || '').toLowerCase().includes(query);
+                const searchEs = (game.title.es || '').toLowerCase().includes(query);
+                const genreMatch = (game.genre[activeLang] || '').toLowerCase().includes(query);
+                return searchAr || searchEn || searchFr || searchEs || genreMatch;
+            });
+            renderGames(filtered);
+        });
+
+        function filterBySeries(series) {
+            currentActiveSeries = series;
+            const badge = document.getElementById('active-filter-badge');
+            const filterName = document.getElementById('filter-name');
+            
+            // Filter Button Elements
+            const buttons = {
+                all: document.getElementById('btn-filter-all'),
+                re: document.getElementById('btn-filter-re'),
+                cod: document.getElementById('btn-filter-cod'),
+                mc: document.getElementById('btn-filter-mc'),
+                clean: document.getElementById('btn-filter-clean')
+            };
+
+            // Reset selection style
+            Object.values(buttons).forEach(btn => {
+                if (btn) {
+                    btn.className = "px-4 py-2.5 rounded-xl bg-gaming-card hover:bg-gray-800 text-gray-300 hover:text-white transition duration-200 font-bold border border-gray-800 flex items-center gap-2";
+                }
+            });
+
+            // Set active highlighted category class
+            if (series === 'all') {
+                buttons.all.className = "px-4 py-2.5 rounded-xl bg-white/10 text-white font-bold border border-transparent shadow-md flex items-center gap-2";
+                badge.classList.add('hidden');
+                renderGames(allGames);
+            } else {
+                badge.classList.remove('hidden');
+                let displayTagName = 'الكل';
+                let accentColor = 'text-gaming-accent';
+                
+                if (series === 'resident-evil') {
+                    buttons.re.className = "px-4 py-2.5 rounded-xl bg-red-950/25 text-white font-bold border border-gaming-accent/60 shadow-lg shadow-gaming-accent/10 flex items-center gap-2";
+                    displayTagName = activeLang === 'ar' ? 'سلسلة ريزيدنت إيفل' : 'Resident Evil Series';
+                    accentColor = 'text-gaming-accent';
+                } else if (series === 'call-of-duty') {
+                    buttons.cod.className = "px-4 py-2.5 rounded-xl bg-orange-950/25 text-white font-bold border border-gaming-codAccent/60 shadow-lg shadow-gaming-codAccent/10 flex items-center gap-2";
+                    displayTagName = activeLang === 'ar' ? 'سلسلة كول أوف ديوتي' : 'Call of Duty Series';
+                    accentColor = 'text-gaming-codAccent';
+                } else if (series === 'minecraft') {
+                    buttons.mc.className = "px-4 py-2.5 rounded-xl bg-emerald-950/25 text-white font-bold border border-gaming-mcAccent/60 shadow-lg shadow-gaming-mcAccent/10 flex items-center gap-2";
+                    displayTagName = activeLang === 'ar' ? 'سلسلة ماين كرافت' : 'Minecraft Series';
+                    accentColor = 'text-gaming-mcAccent';
+                } else if (series === 'clean-games') {
+                    buttons.clean.className = "px-4 py-2.5 rounded-xl bg-sky-950/25 text-white font-bold border border-gaming-cleanAccent/60 shadow-lg shadow-gaming-cleanAccent/10 flex items-center gap-2";
+                    displayTagName = activeLang === 'ar' ? 'ألعاب عائلية ومحاكاة (حلال)' : 'Family & Simulation (Halal)';
+                    accentColor = 'text-gaming-cleanAccent';
+                }
+                
+                filterName.className = `font-black ${accentColor}`;
+                filterName.textContent = displayTagName;
+                
+                const filtered = allGames.filter(game => game.series === series);
+                renderGames(filtered);
+            }
+
+            // Clear search bar on filter tab changes
+            searchInput.value = "";
+        }
+
+        // Scroll to games block smoothly
+        function scrollToGames() {
+            document.getElementById('games-list').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        let activeGame = null;
+        
+        function openModal(gameId) {
+            activeGame = allGames.find(g => g.id === gameId);
+            if (!activeGame) return;
+            
+            // Text data localization binding
+            const gameTitle = activeGame.title[activeLang] || activeGame.title['en'];
+            const gameGenre = activeGame.genre[activeLang] || activeGame.genre['en'];
+            const gameDesc = activeGame.description[activeLang] || activeGame.description['en'];
+
+            document.getElementById('modal-title').textContent = gameTitle;
+            document.getElementById('modal-genre').textContent = gameGenre;
+            document.getElementById('modal-rating').innerHTML = `<i class="fa-solid fa-star text-yellow-400"></i> ${activeGame.rating}`;
+            document.getElementById('modal-year').textContent = activeGame.year;
+            
+            // Theme dynamic elements
+            const headerBg = document.getElementById('modal-header-bg');
+            const genreBadge = document.getElementById('modal-genre');
+            const recBadge = document.getElementById('rec-badge');
+            const recContainer = document.getElementById('rec-specs-container');
+            const recIcon = document.getElementById('rec-icon');
+            const closeBtn = document.getElementById('modal-close-btn');
+            const infoDescIcon = document.getElementById('info-desc-icon');
+            
+            // Re-apply original translation content to close button based on language
+            const closeBtnLabel = activeLang === 'ar' ? 'موافق، إغلاق النافذة' : (activeLang === 'fr' ? 'Fermer la fenêtre' : (activeLang === 'es' ? 'Aceptar, cerrar' : 'OK, Close Window'));
+            closeBtn.textContent = closeBtnLabel;
+
+            // Reset dynamic header classes
+            headerBg.className = "relative h-48 md:h-60 flex items-end p-6 bg-gradient-to-t z-10 transition-colors duration-300";
+            
+            if (activeGame.series === 'resident-evil') {
+                headerBg.classList.add('from-gaming-card', 'via-red-950/35', 'to-red-950/80');
+                genreBadge.className = "bg-gaming-accent text-white text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider mb-2 inline-block";
+                recBadge.className = "absolute -top-3 right-4 bg-gaming-accent text-white text-xs font-extrabold px-3 py-1 rounded-full";
+                recContainer.className = "bg-gaming-accent/5 p-5 rounded-2xl border border-gaming-accent/20 relative";
+                recIcon.className = "fa-solid fa-circle-check text-gaming-accent";
+                closeBtn.className = "bg-gaming-accent hover:bg-red-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm transition-colors duration-200 w-full sm:w-auto shadow-lg shadow-gaming-accent/15";
+                infoDescIcon.className = "fa-solid fa-film text-gaming-accent";
+            } else if (activeGame.series === 'call-of-duty') {
+                headerBg.classList.add('from-gaming-card', 'via-orange-950/35', 'to-orange-950/80');
+                genreBadge.className = "bg-gaming-codAccent text-black text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider mb-2 inline-block";
+                recBadge.className = "absolute -top-3 right-4 bg-gaming-codAccent text-black text-xs font-black px-3 py-1 rounded-full";
+                recContainer.className = "bg-gaming-codAccent/5 p-5 rounded-2xl border border-gaming-codAccent/20 relative";
+                recIcon.className = "fa-solid fa-circle-check text-gaming-codAccent";
+                closeBtn.className = "bg-gaming-codAccent hover:bg-orange-600 text-black px-6 py-2.5 rounded-xl font-bold text-sm transition-colors duration-200 w-full sm:w-auto shadow-lg shadow-gaming-codAccent/15";
+                infoDescIcon.className = "fa-solid fa-gun text-gaming-codAccent";
+            } else if (activeGame.series === 'minecraft') {
+                headerBg.classList.add('from-gaming-card', 'via-emerald-950/35', 'to-emerald-950/80');
+                genreBadge.className = "bg-gaming-mcAccent text-black text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider mb-2 inline-block";
+                recBadge.className = "absolute -top-3 right-4 bg-gaming-mcAccent text-black text-xs font-black px-3 py-1 rounded-full";
+                recContainer.className = "bg-gaming-mcAccent/5 p-5 rounded-2xl border border-gaming-mcAccent/20 relative";
+                recIcon.className = "fa-solid fa-circle-check text-gaming-mcAccent";
+                closeBtn.className = "bg-gaming-mcAccent hover:bg-emerald-600 text-black px-6 py-2.5 rounded-xl font-bold text-sm transition-colors duration-200 w-full sm:w-auto shadow-lg shadow-gaming-mcAccent/15";
+                infoDescIcon.className = "fa-solid fa-cubes text-gaming-mcAccent";
+            } else if (activeGame.series === 'clean-games') {
+                headerBg.classList.add('from-gaming-card', 'via-sky-950/35', 'to-sky-950/80');
+                genreBadge.className = "bg-gaming-cleanAccent text-black text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider mb-2 inline-block";
+                recBadge.className = "absolute -top-3 right-4 bg-gaming-cleanAccent text-black text-xs font-black px-3 py-1 rounded-full";
+                recContainer.className = "bg-gaming-cleanAccent/5 p-5 rounded-2xl border border-gaming-cleanAccent/20 relative";
+                recIcon.className = "fa-solid fa-circle-check text-gaming-cleanAccent";
+                closeBtn.className = "bg-gaming-cleanAccent hover:bg-sky-600 text-black px-6 py-2.5 rounded-xl font-bold text-sm transition-colors duration-200 w-full sm:w-auto shadow-lg shadow-gaming-cleanAccent/15";
+                infoDescIcon.className = "fa-solid fa-seedling text-gaming-cleanAccent";
+            }
+            
+            // Specifications Tab Binding
+            document.getElementById('min-os').textContent = activeGame.specs.min.os;
+            document.getElementById('min-cpu').textContent = activeGame.specs.min.cpu;
+            document.getElementById('min-ram').textContent = activeGame.specs.min.ram;
+            document.getElementById('min-gpu').textContent = activeGame.specs.min.gpu;
+            document.getElementById('min-dx').textContent = activeGame.specs.min.dx;
+            document.getElementById('min-storage').textContent = activeGame.specs.min.storage;
+            
+            document.getElementById('rec-os').textContent = activeGame.specs.rec.os;
+            document.getElementById('rec-cpu').textContent = activeGame.specs.rec.cpu;
+            document.getElementById('rec-ram').textContent = activeGame.specs.rec.ram;
+            document.getElementById('rec-gpu').textContent = activeGame.specs.rec.gpu;
+            document.getElementById('rec-dx').textContent = activeGame.specs.rec.dx;
+            document.getElementById('rec-storage').textContent = activeGame.specs.rec.storage;
+            
+            // Quick Info Tab Binding
+            document.getElementById('info-developer').textContent = activeGame.developer;
+            document.getElementById('info-publisher').textContent = activeGame.publisher;
+            document.getElementById('info-platforms').textContent = activeGame.platforms;
+            document.getElementById('info-description').textContent = gameDesc;
+            document.getElementById('info-engine').textContent = activeGame.engine;
+            
+            // Show modal and preserve default "specs" focus tab
+            switchTab('specs');
+            
+            const modal = document.getElementById('game-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Scale animate popup smoothly
+            setTimeout(() => {
+                modal.firstElementChild.classList.remove('scale-95');
+                modal.firstElementChild.classList.add('scale-100');
+            }, 10);
+            
+            document.body.classList.add('overflow-hidden');
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('game-modal');
+            modal.firstElementChild.classList.remove('scale-100');
+            modal.firstElementChild.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+            }, 200);
+        }
+        
+        function switchTab(tab) {
+            const btnSpecs = document.getElementById('tab-btn-specs');
+            const btnInfo = document.getElementById('tab-btn-quick-info');
+            const contentSpecs = document.getElementById('tab-content-specs');
+            const contentInfo = document.getElementById('tab-content-quick-info');
+            
+            let tabHighlightClass = "border-gaming-accent text-white";
+            if (activeGame && activeGame.series === 'call-of-duty') {
+                tabHighlightClass = "border-gaming-codAccent text-white";
+            } else if (activeGame && activeGame.series === 'minecraft') {
+                tabHighlightClass = "border-gaming-mcAccent text-white";
+            } else if (activeGame && activeGame.series === 'clean-games') {
+                tabHighlightClass = "border-gaming-cleanAccent text-white";
+            }
+            
+            // Reset tab highlights
+            btnSpecs.className = "flex-1 py-4 text-center font-bold text-sm text-gaming-textGray hover:text-white transition-all duration-150 border-b-2 border-transparent";
+            btnInfo.className = "flex-1 py-4 text-center font-bold text-sm text-gaming-textGray hover:text-white transition-all duration-150 border-b-2 border-transparent";
+
+            if (tab === 'specs') {
+                btnSpecs.className = `flex-1 py-4 text-center font-bold text-sm border-b-2 ${tabHighlightClass} text-white transition-all duration-150`;
+                contentSpecs.classList.remove('hidden');
+                contentInfo.classList.add('hidden');
+            } else {
+                btnInfo.className = `flex-1 py-4 text-center font-bold text-sm border-b-2 ${tabHighlightClass} text-white transition-all duration-150`;
+                contentInfo.classList.remove('hidden');
+                contentSpecs.classList.add('hidden');
+            }
+        }
+
+        // Clipboard Share specifications
+        function copySpecsToClipboard() {
+            if (!activeGame) return;
+            const gameTitle = activeGame.title[activeLang] || activeGame.title['en'];
+            const specText = `
+=== ${gameTitle} System Specs ===
+[Minimum requirements]
+- OS: ${activeGame.specs.min.os}
+- CPU: ${activeGame.specs.min.cpu}
+- RAM: ${activeGame.specs.min.ram}
+- GPU: ${activeGame.specs.min.gpu}
+- DX: ${activeGame.specs.min.dx}
+- Storage: ${activeGame.specs.min.storage}
+
+[Recommended requirements]
+- OS: ${activeGame.specs.rec.os}
+- CPU: ${activeGame.specs.rec.cpu}
+- RAM: ${activeGame.specs.rec.ram}
+- GPU: ${activeGame.specs.rec.gpu}
+- DX: ${activeGame.specs.rec.dx}
+- Storage: ${activeGame.specs.rec.storage}
+
+Source: SpecLegend Hub
+            `.trim();
+
+            // Create temporary textarea for copying due to iframe sandboxing compatibility
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = specText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                showToast();
+            } catch (err) {
+                console.error('Failed to copy text', err);
+            }
+            document.body.removeChild(tempTextArea);
+        }
+
+        // Beautiful Dynamic Toast Notification System (Theme matched)
+        function showToast() {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            // Check dynamic color match based on open game
+            let borderAccent = 'border-gaming-cleanAccent';
+            let iconColor = 'text-gaming-cleanAccent';
+            if (activeGame) {
+                if (activeGame.series === 'resident-evil') {
+                    borderAccent = 'border-gaming-accent';
+                    iconColor = 'text-gaming-accent';
+                } else if (activeGame.series === 'call-of-duty') {
+                    borderAccent = 'border-gaming-codAccent';
+                    iconColor = 'text-gaming-codAccent';
+                } else if (activeGame.series === 'minecraft') {
+                    borderAccent = 'border-gaming-mcAccent';
+                    iconColor = 'text-gaming-mcAccent';
+                }
+            }
+
+            const successMessage = uiTranslations[activeLang]["toast-success"] || uiTranslations["en"]["toast-success"];
+
+            toast.className = `flex items-center gap-3 bg-gaming-card/95 backdrop-blur-md border ${borderAccent} px-5 py-4 rounded-2xl shadow-xl text-white font-bold text-sm pointer-events-auto transition-all duration-300 transform translate-y-10 opacity-0`;
+            toast.innerHTML = `
+                <i class="fa-solid fa-circle-check text-lg ${iconColor}"></i>
+                <span>${successMessage}</span>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Animate In
+            setTimeout(() => {
+                toast.classList.remove('translate-y-10', 'opacity-0');
+            }, 10);
+            
+            // Animate Out & Destroy
+            setTimeout(() => {
+                toast.classList.add('translate-y-5', 'opacity-0');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3500);
+        }
+
+        // Close on blur area click
+        window.onclick = function(event) {
+            const modal = document.getElementById('game-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Startup Load Setup
+        window.onload = function() {
+            changeLanguage('ar'); // Default load language set to Arabic
+        };
+    </script>
+</body>
+</html>
